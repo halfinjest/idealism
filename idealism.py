@@ -8,7 +8,7 @@ def get_transitions(bitstring):
 	transitions = ""
 
 	for i in range(len(bitstring) - 1):
-		transitions += ["0", "1"][bitstring[i] != bitstring[i + 1]]
+		transitions += str(int(bitstring[i] != bitstring[i + 1]))
 
 	return transitions
 
@@ -18,9 +18,9 @@ def get_formatted_bitstring(bitstring, number):
 
 		for i in range(number):
 			for j in range(len(bitstring) / number):
-				formatted_bitstring += bitstring[(number * j) + i]
+				formatted_bitstring += bitstring[number * j + i]
 
-		bitstring = formatted_bitstring + bitstring[len(bitstring) - (len(bitstring) % number):]
+		bitstring = formatted_bitstring + bitstring[len(bitstring) - len(bitstring) % number:]
 
 	return bitstring 
 
