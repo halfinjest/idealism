@@ -16,11 +16,13 @@ def get_formatted_bitstring(bitstring, number):
 	if number > 1:
 		formatted_bitstring = ""
 
+		segments = len(bitstring) / number
+
 		for i in range(number):
-			for j in range(len(bitstring) / number):
+			for j in range(segments):
 				formatted_bitstring += bitstring[number * j + i]
 
-		bitstring = formatted_bitstring + bitstring[len(bitstring) - len(bitstring) % number:]
+		bitstring = formatted_bitstring + bitstring[number * segments:]
 
 	return bitstring 
 
