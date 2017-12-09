@@ -5,10 +5,10 @@ def get_idealism(ideal, real):
 	return math.log(2 - abs(1 - real / ideal), 2)
 
 def get_transitions(bitstring):
-	transitions = ""
+	transitions = 0
 
 	for i in range(len(bitstring) - 1):
-		transitions += str(int(bitstring[i] != bitstring[i + 1]))
+		transitions += int(bitstring[i] != bitstring[i + 1])
 
 	return transitions
 
@@ -36,7 +36,7 @@ def main():
 
 		ideal = (len(formatted_bitstring) - 1) / 2.0
 
-		real = sum(int(bit) for bit in get_transitions(formatted_bitstring))
+		real = get_transitions(formatted_bitstring)
 
 		options.append(get_idealism(ideal, real))
 
