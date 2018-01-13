@@ -31,8 +31,8 @@ def main():
 
 	options = []
 
-	for i in range(len(bitstring) / 2):
-		formatted_bitstring = get_formatted_bitstring(bitstring, i + 1)
+	for i in range(1, len(bitstring) / 2):
+		formatted_bitstring = get_formatted_bitstring(bitstring, i)
 
 		ideal = (len(formatted_bitstring) - 1) / 2.0
 
