@@ -22,7 +22,7 @@ def get_formatted_bitstring(bitstring, number):
 			for j in range(segments):
 				bitstring_ += bitstring[number * j + i]
 
-		bitstring = bitstring_ + bitstring[number * segments:]
+		return bitstring_ + bitstring[number * segments:]
 
 	return bitstring
 
