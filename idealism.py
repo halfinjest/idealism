@@ -14,15 +14,15 @@ def get_transitions(bitstring):
 
 def get_formatted_bitstring(bitstring, number):
 	if number > 1:
-		formatted_bitstring = ""
+		bitstring_ = ""
 
 		segments = len(bitstring) / number
 
 		for i in range(number):
 			for j in range(segments):
-				formatted_bitstring += bitstring[number * j + i]
+				bitstring_ += bitstring[number * j + i]
 
-		bitstring = formatted_bitstring + bitstring[number * segments:]
+		bitstring = bitstring_ + bitstring[number * segments:]
 
 	return bitstring
 
@@ -32,13 +32,9 @@ def main():
 	options = []
 
 	for i in range(1, len(bitstring) / 2):
-		formatted_bitstring = get_formatted_bitstring(bitstring, i)
+		bitstring_ = get_formatted_bitstring(bitstring, i)
 
-		ideal = (len(formatted_bitstring) - 1) / 2.0
-
-		real = get_transitions(formatted_bitstring)
-
-		options.append(get_idealism(ideal, real))
+		options.append(get_idealism((len(bitstring_) - 1) / 2.0, get_transitions(bitstring_)))
 
 	sys.stdout.write(str(min(options)) + "\n")
 
