@@ -1,7 +1,7 @@
 import math
 import sys
 
-def get_idealism(ideal, real):
+def get_randomness(ideal, real):
 	return math.log(2 - abs(1 - real / ideal), 2)
 
 def get_transitions(bitstring):
@@ -34,7 +34,7 @@ def main():
 	for i in range(1, len(bitstring) / 2):
 		bitstring_ = get_formatted_bitstring(bitstring, i)
 
-		options.append(get_idealism((len(bitstring_) - 1) / 2.0, get_transitions(bitstring_)))
+		options.append(get_randomness((len(bitstring_) - 1) / 2.0, get_transitions(bitstring_)))
 
 	sys.stdout.write(str(min(options)) + "\n")
 

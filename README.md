@@ -1,11 +1,11 @@
-# idealism
+# randomness
 
-Quantifies the unpredictability idealism of a bitstring.
+Quantifies the randomness of a bitstring.
 
 ## Usage
 
 Set the bitstring input to the desired configuration, and use:
 
-`python idealism.py`
+`python randomness.py`
 
-I have also created a much faster [C implementation](http://halfinjest.com/idealism.c) of this program, which performs exactly the same function, but much more quickly.
+I have also created a much faster [C implementation](http://halfinjest.com/randomness.c) of this program, which performs exactly the same function, but much more quickly.
