@@ -2,7 +2,7 @@ import math
 import sys
 
 def get_randomness(ideal, real):
-	return math.log(2 - abs(1 - real / ideal), 2)
+	return math.log(2 - (1 - real / ideal)**2, 2)
 
 def get_transitions(bitstring):
 	transitions = 0
